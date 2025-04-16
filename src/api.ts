@@ -31,7 +31,8 @@ export const updateTask = async (
   taskId: number,
   updatedFields: { status: Task['status'] },
 ): Promise<Task> => {
-  const res = await axios.patch(`${BASE_URL}/tasks/${taskId}`, updatedFields);
+  console.log(taskId);
+  const res = await axios.patch(`${BASE_URL}/${taskId}`, updatedFields);
   return res.data.task;
 };
 

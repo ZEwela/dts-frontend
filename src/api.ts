@@ -12,8 +12,8 @@ export type NewTask = Omit<Task, 'task_id'>;
 
 const BASE_URL = 'http://localhost:9090/api/tasks';
 
-export const getTasks = async (): Promise<Task[]> => {
-  const res = await axios.get(BASE_URL);
+export const getTasks = async (status: 'All' | Task['status']): Promise<Task[]> => {
+  const res = await axios.get(`${BASE_URL}?status=${status}`);
   return res.data.tasks;
 };
 

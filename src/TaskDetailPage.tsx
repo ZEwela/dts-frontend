@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { deleteTask, getTaskById, Task, updateTask } from './api';
 import { getStatusStyle } from './TasksPage';
 
@@ -8,6 +8,7 @@ export default function TaskDetailPage() {
   const [task, setTask] = useState<Task | null>(null);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const fetchTask = async () => {
@@ -38,11 +39,16 @@ export default function TaskDetailPage() {
     }
   };
 
+  const handleBack = () => {
+    const previousLocation = location.state?.from || '/tasks';
+    navigate(previousLocation);
+  };
+
   if (!task) return <div className='p-6'>Loading...</div>;
 
   return (
     <div className='pt-20 p-2'>
-      <button onClick={() => navigate('/tasks')} className='text-blue-600 hover:underline mb-4'>
+      <button onClick={handleBack} className='text-blue-600 hover:underline mb-4'>
         ← Back to all tasks
       </button>
       <div className='flex flex-col w-full min-h-screen p-20'>

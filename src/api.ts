@@ -8,13 +8,29 @@ export type Task = {
   due_date: string;
 };
 
+export interface TasksPaginationResponse {
+  tasks: Task[];
+  totalPages: number;
+}
+
 export type NewTask = Omit<Task, 'task_id'>;
 
 const BASE_URL = 'http://localhost:9090/api/tasks';
 
-export const getTasks = async (status: 'All' | Task['status']): Promise<Task[]> => {
-  const res = await axios.get(`${BASE_URL}?status=${status}`);
-  return res.data.tasks;
+export const getTasks = async (
+  status: 'All' | Task['status'],
+  page: number = 1,
+  limit: number = 10,
+): Promise<TasksPaginationResponse> => {
+  const res = await axios.get(BASE_URL, {
+    params: {
+      status,
+      page,
+      limit,
+    },
+  });
+
+  return res.data;
 };
 
 export const getTaskById = async (taskId: number): Promise<Task> => {

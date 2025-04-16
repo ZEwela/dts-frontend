@@ -9,7 +9,7 @@ export default function Header() {
   };
 
   return (
-    <header className='fixed top-0 left-0 right-0 w-full bg-white shadow-md py-4 px-6 flex justify-between items-center z-50'>
+    <header className='fixed top-0 left-0 right-0 w-full bg-white shadow-md py-4 px-30 flex justify-between items-center z-50'>
       <div className='text-xl md:text-2xl font-bold text-blue-600'>
         <Link to='/' className='hover:text-blue-700 transition'>
           Task Manager

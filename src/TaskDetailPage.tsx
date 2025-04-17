@@ -50,7 +50,7 @@ export default function TaskDetailPage() {
       <button onClick={handleBack} className='text-blue-600 hover:underline mb-4 m-2'>
         ← Back to all tasks
       </button>
-      <div className='flex justify-self-center md:max-w-[800px]  max-w-[500px] '>
+      <div className='flex justify-self-center md:max-w-[800px]  max-w-[500px] sm:min-w-2xl min-w-[450px]'>
         <div className='flex flex-col w-full min-h-screen p-20'>
           <h1 className='text-3xl font-bold mb-10  break-words'>{task.title}</h1>
           <p className='text-gray-600 mb-6  overflow-hidden wrap-break-word'>{task.description}</p>

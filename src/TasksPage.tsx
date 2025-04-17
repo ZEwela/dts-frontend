@@ -86,23 +86,23 @@ export default function TasksPage() {
                         state: { from: window.location.pathname + window.location.search },
                       })
                     }
-                    className='cursor-pointer border rounded-xl shadow hover:shadow-lg transition-all p-4 flex flex-col justify-between hover:-translate-y-1 bg-white'
+                    className='group cursor-pointer rounded-lg border border-gray-200 bg-white shadow-md transition-shadow duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 p-6'
                   >
-                    <div>
-                      <h2 className='text-xl font-semibold mb-1 text-gray-800 line-clamp-3'>
-                        {task.title}
-                      </h2>
-                      <p className='text-sm text-gray-600 mb-4 line-clamp-3'>{task.description}</p>
+                    <h2 className='text-lg font-semibold text-gray-900 line-clamp-2 mb-2 group-hover:text-blue-600'>
+                      {task.title}
+                    </h2>
+                    <div className='p-7'>
+                      <p className='text-sm text-gray-600 line-clamp-3 mb-3'>{task.description}</p>
                     </div>
 
-                    <div className='flex justify-between items-center text-sm mt-auto'>
+                    <div className='flex justify-between items-center text-sm'>
                       <span
-                        className={`px-2 py-1 rounded-full font-medium ${getStatusStyle(task.status)}`}
+                        className={`inline-flex items-center rounded-full px-2 py-1  font-medium text-sm ${getStatusStyle(task.status)}`}
                       >
                         {task.status}
                       </span>
                       <span
-                        className={`${overdue ? 'text-red-500 font-semibold' : 'text-gray-500'}`}
+                        className={`text-gray-500 ${overdue ? 'text-red-600 font-semibold' : ''}`}
                         title={new Date(task.due_date).toLocaleString()}
                       >
                         Due:{' '}

@@ -4,6 +4,7 @@ import TasksPage from './TasksPage';
 import TaskDetailPage from './TaskDetailPage';
 import { ToastContainer } from 'react-toastify';
 import CreateTaskPage from './CreateTaskPage';
+import NotFoundPage from './NotFoundPage';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path='/tasks' element={<TasksPage />} />
         <Route path='/create-task' element={<CreateTaskPage />} />
         <Route path='/tasks/:taskId' element={<TaskDetailPage />} />
+        <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </div>
   );

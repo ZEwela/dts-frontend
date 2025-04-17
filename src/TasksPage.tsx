@@ -6,6 +6,7 @@ import { getTasks, Task } from './api';
 import { toast } from 'react-toastify';
 import { AxiosError } from 'axios';
 import Pagination from './components/Pagination';
+import { handleApiError } from './utilis/ErrorHandler';
 
 export const getStatusStyle = (status: Task['status']) => {
   switch (status) {
@@ -37,10 +38,12 @@ export default function TasksPage() {
       } catch (err) {
         if (err instanceof AxiosError) {
           if (err.response?.data?.msg === 'Invalid status value.') {
-            toast.error('Invalid status filter. Showing all tasks.');
+            toast.error('Something went wrong. Showing all tasks.');
             setSearchParams({ status: 'All', page: '1' });
+            return;
           }
         }
+        handleApiError(err);
       }
     };
     fetchTasks();

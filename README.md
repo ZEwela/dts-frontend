@@ -1,54 +1,62 @@
-# React + TypeScript + Vite
+# 🧩 Task Manager Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **React frontend** for the Task Manager app. It connects to a backend API (Node.js + Express + PostgreSQL) and allows users to manage tasks—create, read, update, delete—via a responsive user interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ View all tasks
+- 🔍 Filter by task status (`Pending`, `In Progress`, `Completed`)
+- 📄 Paginate through tasks
+- ✍️ Create, update, and delete tasks
+- ⚡ Fast and responsive interface built with React
+- 🌈 Styled with Tailwind
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Tech Stack
+
+- **React** (frontend framework)
+- **Axios** (for API requests)
+- **React Router** (for client-side routing)
+- **Vite** (fast dev server & bundler)
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/ZEwela/dts-frontend.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+### 3. Start the frontend
+
+```bash
+npm run dev
+```
+
+Open your browser to [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 📁 Notes
+
+- Make sure the backend is running on port 9090 before starting the frontend. [https://github.com/ZEwela/dts-backend](https://github.com/ZEwela/dts-backend)
+
+---
+
+## 📩 Contact
+
+Have questions, suggestions, or want to collaborate?
+
+- GitHub: [ZEwela](https://github.com/zewela)
+- Email: [ewelinazawol@gmail.com](mailto:ewelinazawol@gmail.com)

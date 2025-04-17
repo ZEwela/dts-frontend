@@ -9,7 +9,7 @@ export default function Header() {
   };
 
   return (
-    <header className='fixed top-0 left-0 right-0 w-full bg-white shadow-md py-4 px-30 flex justify-between items-center z-50'>
+    <header className='fixed top-0 left-0 right-0 w-full bg-white shadow-md py-4 px-6 md:px-30 flex justify-between items-center z-50'>
       <div className='text-xl md:text-2xl font-bold text-blue-600'>
         <Link to='/' className='hover:text-blue-700 transition'>
           Task Manager
@@ -20,6 +20,15 @@ export default function Header() {
         <div className='hidden md:flex gap-4'>
           <Link to='/tasks' className='text-gray-700 hover:text-blue-600 font-medium transition'>
             Tasks
+          </Link>
+        </div>
+
+        <div className='hidden md:flex gap-4'>
+          <Link
+            to='/create-task'
+            className='text-gray-700 hover:text-blue-600 font-medium transition'
+          >
+            Create Task
           </Link>
         </div>
 
@@ -38,6 +47,13 @@ export default function Header() {
             onClick={toggleMenu}
           >
             Tasks
+          </Link>
+          <Link
+            to='/create-task'
+            className='block text-gray-700 hover:text-blue-600 font-medium mb-2'
+            onClick={toggleMenu}
+          >
+            Create Task
           </Link>
         </div>
       )}

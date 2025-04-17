@@ -89,7 +89,9 @@ export default function TasksPage() {
                     className='cursor-pointer border rounded-xl shadow hover:shadow-lg transition-all p-4 flex flex-col justify-between hover:-translate-y-1 bg-white'
                   >
                     <div>
-                      <h2 className='text-xl font-semibold mb-1 text-gray-800'>{task.title}</h2>
+                      <h2 className='text-xl font-semibold mb-1 text-gray-800 line-clamp-3'>
+                        {task.title}
+                      </h2>
                       <p className='text-sm text-gray-600 mb-4 line-clamp-3'>{task.description}</p>
                     </div>
 

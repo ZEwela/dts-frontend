@@ -46,15 +46,15 @@ export default function TaskDetailPage() {
   if (!task) return <div className='p-6'>Loading...</div>;
 
   return (
-    <div className='pt-20 p-2 px-30'>
-      <button onClick={handleBack} className='text-blue-600 hover:underline mb-4'>
+    <div className='pt-20 p-2 '>
+      <button onClick={handleBack} className='text-blue-600 hover:underline mb-4 m-2'>
         ← Back to all tasks
       </button>
-      <div className='flex justify-self-center'>
+      <div className='flex justify-self-center md:max-w-[800px]  max-w-[500px] '>
         <div className='flex flex-col w-full min-h-screen p-20'>
-          <h1 className='text-3xl font-bold mb-2'>{task.title}</h1>
-          <p className='text-gray-600 mb-4'>{task.description}</p>
-          <p className='text-sm text-gray-500 mb-4'>
+          <h1 className='text-3xl font-bold mb-10  break-words'>{task.title}</h1>
+          <p className='text-gray-600 mb-6  overflow-hidden wrap-break-word'>{task.description}</p>
+          <p className='text-sm text-gray-500 mb-6'>
             Due: {new Date(task.due_date).toLocaleString()}
           </p>
 
@@ -65,7 +65,7 @@ export default function TaskDetailPage() {
             </span>
           </div>
 
-          <div>
+          <div className='flex  flex-col mt-10'>
             <label className=' text-sm font-medium mb-1 flex items-center gap-1'>
               🛠️ Change Status:
             </label>
@@ -81,7 +81,7 @@ export default function TaskDetailPage() {
           </div>
           <button
             onClick={() => setShowConfirmDelete(true)}
-            className='mt-20 w-3xs text-red-600 border border-red-600 hover:border-red-800 hover:bg-red-500 hover:text-white px-4 py-2 rounded'
+            className='mt-20  text-red-600 border border-red-600 hover:border-red-800 hover:bg-red-500 hover:text-white px-4 py-2 rounded'
           >
             🗑 Delete Task
           </button>

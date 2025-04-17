@@ -50,7 +50,7 @@ Open your browser to [http://localhost:5173](http://localhost:5173)
 
 ## 📁 Notes
 
-- Make sure the backend is running on port 9090 before starting the frontend. [https://github.com/ZEwela/dts-backend](https://github.com/ZEwela/dts-backend)
+- Make sure the backend is running on port 9090 before starting the frontend. Seed the database with development data. [https://github.com/ZEwela/dts-backend](https://github.com/ZEwela/dts-backend)
 
 ---
 

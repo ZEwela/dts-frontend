@@ -9,7 +9,6 @@ export const handleApiError = (
   err: unknown,
   fallbackMessage = 'Something went wrong. Please try again later.',
 ) => {
-  console.error(err);
   if (axios.isAxiosError(err)) {
     const backendErrors = err.response?.data.errors as ApiValidationError[];
     if (backendErrors?.length) {
